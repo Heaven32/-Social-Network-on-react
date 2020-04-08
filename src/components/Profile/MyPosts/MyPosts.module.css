@@ -1,0 +1,17 @@
+.my_posts {
+  color: rgb(255, 196, 0);
+  padding: 10px;
+}
+.text_form {
+  padding-bottom: 5px;
+}
+.text_form textarea{
+  width: 300px;
+  height: 100px;
+}
+.btn {
+  padding-bottom: 10px;
+}
+.btn button{
+  margin: 6px;
+}

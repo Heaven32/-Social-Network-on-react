@@ -1,0 +1,19 @@
+.wrap {
+    grid-area: hmenu;
+    background-color:blue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.wrap .item{
+    padding: 0 10px;
+}
+.wrap .item a{
+    color: white;
+    text-decoration: none;
+}
+
+.item a.activeLink {
+    color: gold;
+}
+    

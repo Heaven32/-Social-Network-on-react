@@ -1,0 +1,19 @@
+.app-wrapper {
+  margin: 0 auto;
+  display: grid;
+  width: 1200px;
+  grid-template-areas: 
+    "header hmenu"
+    "nav content";
+
+  grid-template-rows: 70px 1fr;
+  grid-template-columns: 2fr 10fr;
+
+}
+
+.app-wrapper-content {
+    grid-area: content;
+    background-color: indianred ;
+}
+
+

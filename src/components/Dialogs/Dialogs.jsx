@@ -6,20 +6,25 @@ import DialogItem from './DialogItem/DialogItem';
 
 const Dialogs = (props) => {
 
-   let messageElements = props.state.messages.map( msg => <Message message={msg.message} id={msg.id} />);
-   let dialogsElements = props.state.dialogs.map( dlg => <DialogItem name={dlg.name} id={dlg.id} />);
+    let messageElements = props.state.messages.map( msg => <Message message={msg.message} id={msg.id} />);
+    let dialogsElements = props.state.dialogs.map( dlg => <DialogItem name={dlg.name} id={dlg.id} />);
 
-   let newDialogsPosts = React.createRef();
-   let clickButton = () => {
-    let text = newDialogsPosts.current.value;
-    alert(text)
-   }
+    let newDialogsPosts = React.createRef();
+
+    let clickButton = () => {
+        props.addText();
+    }
+
+    let onTextChange = () => {
+        let text = newDialogsPosts.current.value;
+    props.updateNewText(text);
+    }
 
    return (
      <div className={classes.dialogs}>
          <div className={classes.dialogsItem}>
            { dialogsElements }
-           <textarea ref={newDialogsPosts}></textarea>
+           <textarea ref={newDialogsPosts} onChange={onTextChange} value={props.state.newMessageText} />
            <button onClick={clickButton}>ok</button>
         </div>
         <div className={classes.massages}>

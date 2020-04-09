@@ -29,7 +29,8 @@ let state = {
             {id: 4, message: "Maybe you want ice"},
             {id: 5, message: "No, it`s realy cold oll"},
             {id: 6, message: "Ha-ha"}
-        ]
+        ],
+        newMessageText: "Hi Bro!"
     },
     sidebar:{
         blockFriends:[
@@ -39,6 +40,22 @@ let state = {
         ]  
     }
 };
+
+export let addText = () => {
+    let newText = {
+        id: 7,
+        message: state.dialogsPage.newMessageText
+    }
+    state.dialogsPage.messages.push(newText);
+    state.dialogsPage.newMessageText = "";
+    renderEntireTree(state);
+}
+
+export let updateNewText = (Text) => {
+    
+    state.dialogsPage.newMessageText = Text;
+    renderEntireTree(state);
+}
 
 export let addPost = () => {
     let newPost = {

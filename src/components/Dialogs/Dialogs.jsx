@@ -12,12 +12,14 @@ const Dialogs = (props) => {
     let newDialogsPosts = React.createRef();
 
     let clickButton = () => {
-        props.addText();
+        props.dispatch({type: 'ADD-TEXT'});
     }
 
     let onTextChange = () => {
         let text = newDialogsPosts.current.value;
-    props.updateNewText(text);
+
+        let action = {type: 'UPDATE-NEW-TEXT', Text: text};
+    props.dispatch(action);
     }
 
    return (

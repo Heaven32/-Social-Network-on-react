@@ -3,6 +3,7 @@ import classes from './Dialogs.module.css';
 import { NavLink } from 'react-router-dom';
 import Message from './Message/Message';
 import DialogItem from './DialogItem/DialogItem';
+import { addTextActionCreator, updateNewTextActionCreator } from '../../Redux/state';
 
 const Dialogs = (props) => {
 
@@ -12,14 +13,14 @@ const Dialogs = (props) => {
     let newDialogsPosts = React.createRef();
 
     let clickButton = () => {
-        props.dispatch({type: 'ADD-TEXT'});
+        props.dispatch(addTextActionCreator());
     }
 
     let onTextChange = () => {
         let text = newDialogsPosts.current.value;
 
-        let action = {type: 'UPDATE-NEW-TEXT', Text: text};
-    props.dispatch(action);
+        let action = updateNewTextActionCreator(text);
+        props.dispatch(action);
     }
 
    return (

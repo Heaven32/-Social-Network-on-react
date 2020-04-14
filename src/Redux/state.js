@@ -1,7 +1,6 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-const ADD_TEXT = 'ADD-TEXT';
-const UPDATE_NEW_TEXT = 'UPDATE-NEW-TEXT';
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
+import sidebarReducer from "./sidebar-reducer";
 
 let store = {
     _state : { 
@@ -54,41 +53,12 @@ let store = {
         this._callSubscriber = observer;
     },
     dispatch(action) {
-        if(action.type === ADD_TEXT) {
-            let newText = {
-                id: 7,
-                message: this._state.dialogsPage.newMessageText
-            };
-            this._state.dialogsPage.messages.push(newText);
-            this._state.dialogsPage.newMessageText = "";
-            this._callSubscriber(this._state);
-        }else if (action.type === UPDATE_NEW_TEXT){
-            this._state.dialogsPage.newMessageText = action.Text;
-            this._callSubscriber(this._state);
-        }else if (action.type === ADD_POST){
-            let newPost = {
-                id: 7,
-                message: this._state.profilePage.newPostText,
-                likesCount: "3"
-            };
-            this._state.profilePage.posts.push(newPost);
-            this._state.profilePage.newPostText = "";
-            this._callSubscriber(this._state);
-        }else if (action.type === UPDATE_NEW_POST_TEXT){
-            this._state.profilePage.newPostText = action.newText;
-            this._callSubscriber(this._state);
-        }
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._state.sidebar = sidebarReducer(this._state.sidebar, action);
+
+        this._callSubscriber(this._state)
     }
 };
-
-export const addPostActionCreator = () => ({type: ADD_POST});
-  
-export const updateNewPostActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT , newText: text});
-
-export const addTextActionCreator = () => ({type: ADD_TEXT});
-  
-export const updateNewTextActionCreator = (text) => ({type: UPDATE_NEW_TEXT, Text: text });
-
-  
 
 export default store;

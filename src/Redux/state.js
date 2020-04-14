@@ -14,7 +14,7 @@ let store = {
                 {id: 5, message: "No, it`s realy cold oll", likesCount:"323"},
                 {id: 6, message: "Ha-ha", likesCount:"3"}
             ],
-            newPostText: "hello"
+            newPostText: ""
         },
         dialogsPage:{
             dialogs: [
@@ -33,7 +33,7 @@ let store = {
                 {id: 5, message: "No, it`s realy cold oll"},
                 {id: 6, message: "Ha-ha"}
             ],
-            newMessageText: "Hi Bro!"
+            newMessageText: ""
         },
         sidebar:{
             blockFriends:[

@@ -3,8 +3,8 @@ import classes from './MyPosts.module.css';
 import Post from './Post/Post';
 
 const MyPosts = (props) => {
-  
-  let state = props.profilePage;
+
+  // let state = props.profilePage;
 
   let postsElements = props.posts.map( pst => <Post message={pst.message} likesCount={pst.likesCount} id={pst.id}/>);
 

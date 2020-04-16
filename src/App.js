@@ -10,6 +10,7 @@ import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import News from './components/News/News';
 import Friends from './components/Friends/Friends';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 
 const App = (props) => {
@@ -19,8 +20,8 @@ const App = (props) => {
           <HMenuLine />
           <Navbar />
           <div className='app-wrapper-content'>
-            <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage}  dispatch={props.dispatch} /> } />
-            <Route path='/profile' render={() => <Profile profilePage={props.state.profilePage} dispatch={props.dispatch} /> } />
+            <Route path='/dialogs' render={() => <DialogsContainer store={props.store}/> } />
+            <Route path='/profile' render={() => <Profile store={props.store}/> } />
             <Route path='/news' render={() => <News/> } />
             <Route path='/music' render={() => <Music/> } />
             <Route path='/settings' render={() => <Settings/> } />

@@ -11,7 +11,8 @@ import Settings from './components/Settings/Settings';
 import News from './components/News/News';
 import Friends from './components/Friends/Friends';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
-import Users from './components/Users/Users';
+import UsersContainer from './components/Users/UsersContainer';
+
 
 
 const App = (props) => {

@@ -1,44 +1,15 @@
 import React from 'react';
 import classes from './Users.module.css';
+import Axios from 'axios';
+import userPhoto from '../../assets/images/images.png'
 
 let Users = (props) => {
 
     if (props.users.length === 0){
-        props.setUsers([
-            {
-                id: 1,
-                photoUrl:'https://vjoy.cc/wp-content/uploads/2019/12/ava-dlya-patsanov-v-stim-samye-krutye-022.jpg',
-                followed: true,
-                fullName: "Leo", 
-                status:"I am a boss", 
-                location: {city: 'Dynam', country:'USA'}
-            },
-            {
-                id: 2, 
-                photoUrl:'https://vjoy.cc/wp-content/uploads/2019/12/ava-dlya-patsanov-v-stim-samye-krutye-022.jpg', 
-                followed: false, 
-                fullName: "Sara", 
-                status:"I am a good people", 
-                location: {city: 'Moscow', country:'Russia'}
-            },
-            {
-                id: 3, 
-                photoUrl:'https://vjoy.cc/wp-content/uploads/2019/12/ava-dlya-patsanov-v-stim-samye-krutye-022.jpg', 
-                followed: true, 
-                fullName: "Sam", 
-                status:"I am a student", 
-                location: {city: 'Roma', country:'Italy'}
-            },
-            {
-                id: 4, 
-                photoUrl:'https://vjoy.cc/wp-content/uploads/2019/12/ava-dlya-patsanov-v-stim-samye-krutye-022.jpg', 
-                followed: false, 
-                fullName: "Joshy", 
-                status:"I am cook", 
-                location: {city: 'Dnepr', country:'Ukraine'}
-            }
-        ]
-        );
+
+        Axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
+            props.setUsers(response.data.items)
+        })
     }
     
 
@@ -47,7 +18,7 @@ let Users = (props) => {
             props.users.map( u => <div key={u.id}>
                 <span>
                     <div>
-                        <img className={classes.img_ava} src={u.photoUrl} />
+                        <img className={classes.img_ava} src={ u.photos.small != null ? u.photos.small : userPhoto} />
                     </div>
                     <div>
                         { u.followed
@@ -57,12 +28,12 @@ let Users = (props) => {
                 </span>
                 <span>
                     <span>
-                        <div>{u.fullName}</div>
+                        <div>{u.name}</div>
                         <div>{u.status}</div>
                     </span>
                     <span>
-                        <div>{u.location.country}</div>
-                        <div>{u.location.city}</div>
+                        <div>{"u.location.country"}</div>
+                        <div>{"u.location.city"}</div>
                     </span>
                 </span>
             </div>)

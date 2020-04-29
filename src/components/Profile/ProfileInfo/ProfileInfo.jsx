@@ -14,8 +14,8 @@ const ProfileInfo = (props) => {
             <img  className={classes.img} src="https://images.wallpaperscraft.ru/image/fon_svet_pyatna_92173_300x168.jpg"></img>
           </div>
           <div className={classes.discriptionInfo}>
-            <img src={props.profile.photos.large}/>
-            Ava + discription
+            <div><img src={props.profile.photos.large}/></div>
+            <div>Ava + discription</div>
           </div>
       </div>
           

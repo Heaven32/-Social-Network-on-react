@@ -10,7 +10,8 @@ import News from './components/News/News';
 import Friends from './components/Friends/Friends';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
-import ProfileContainer from './components/Profile/MyPosts/MyPostsContainer';
+import ProfileContainer from './components/Profile/ProfileContainer';
+
 
 
 

@@ -5,3 +5,9 @@
 .img{
     width: 400px;
 }
+
+.info_border {
+    border: 8px outset black; /* Параметры границы */
+    background: #fc3; /* Цвет фона */
+    padding: 10px; /* Поля вокруг текста */
+}

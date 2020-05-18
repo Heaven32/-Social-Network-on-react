@@ -3,38 +3,12 @@ import { addTextActionCreator, updateNewTextActionCreator } from '../../Redux/di
 import Dialogs from './Dialogs';
 import { connect } from 'react-redux';
 
-// const DialogsContainer = () => {
-    
-//     return (
-//         <StoreContext.Consumer>
-//             {(store) => {
-//                 let state = store.getState();
-
-//                 let clickButton = () => {
-//                     store.dispatch(addTextActionCreator());
-//                 }
-
-//                 let onTextChange = (text) => {
-//                     let action = updateNewTextActionCreator(text);
-//                     store.dispatch(action);
-//                 }
-
-//                 return <Dialogs updateNewText={onTextChange}
-//                         addText={clickButton}
-//                         messages={state.dialogsPage.messages}
-//                         dialogs={state.dialogsPage.dialogs}
-//                         newMessageText={state.dialogsPage.newMessageText}/>}
-//         } 
-//         </StoreContext.Consumer>
-    
-//     )
-// }
-
 let mapStateToProps = (state) => {
     return {
         messages: state.dialogsPage.messages,
         dialogs: state.dialogsPage.dialogs,
-        newMessageText:state.dialogsPage.newMessageText
+        newMessageText:state.dialogsPage.newMessageText,
+        isAuth: state.auth.isAuth
     }
 }
 

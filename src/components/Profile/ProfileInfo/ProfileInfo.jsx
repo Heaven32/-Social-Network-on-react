@@ -11,7 +11,7 @@ const ProfileInfo = (props) => {
   return (
       <div>
           <div>
-            <img  className={classes.img} src="https://images.wallpaperscraft.ru/image/fon_svet_pyatna_92173_300x168.jpg"></img>
+            <img  className={classes.img} src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/foggy-545838_960_720.jpg"></img>
           </div>
           <div className={classes.discriptionInfo}>
             <div className={classes.info_border}>

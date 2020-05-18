@@ -1,5 +1,26 @@
 .music {
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
+    animation: haunted 3s infinite;
 }
+
+@keyframes haunted {
+    0% {
+      filter: brightness(20%);
+    }
+    48% {
+      filter: brightness(20%);
+    }
+    50% {
+      filter: sepia(1) contrast(2) brightness(200%);
+    }
+    60% {
+        -webkit-filter: sepia(1) contrast(2) brightness(200%);
+        filter: sepia(1) contrast(2) brightness(200%);
+    }
+    62% {
+        -webkit-filter: brightness(20%);
+        filter: brightness(20%);
+    }
+    96% {
+      filter: brightness(400%);
+    }
+  }
